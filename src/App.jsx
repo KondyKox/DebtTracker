@@ -28,7 +28,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    document.body.classList.toggle("light-theme", !isDarkTheme);
+    document.body.classList.toggle("light-mode", isDarkTheme);
   }, [isDarkTheme]);
 
   // Change current theme
