@@ -1,0 +1,15 @@
+.btn {
+  width: 3.5em;
+  padding: 1em;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--clr-light);
+  font-size: var(--font-md);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: var(--clr-red);
+}

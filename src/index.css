@@ -47,6 +47,15 @@ body {
   color: var(--clr-light);
 }
 
+body.light-theme {
+  background: var(--clr-light);
+  color: var(--clr-blue);
+}
+
+ul {
+  list-style-type: none;
+}
+
 /* Scrollbar */
 body::-webkit-scrollbar {
   width: 8px;
