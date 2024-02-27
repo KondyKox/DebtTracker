@@ -5,6 +5,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import DebtList from "./components/Debtors/DebtList/DebtList";
 import DebtForm from "./components/Debtors/DebtForm/DebtForm";
+import Footer from "./components/Footer/Footer";
 
 // Get your language
 const getLanguage = () => {
@@ -73,7 +74,7 @@ const App = () => {
         isDarkTheme={isDarkTheme}
         setDarkTheme={changeTheme}
       />
-      <div className="debtForm-toggle">
+      <header className="debtForm-toggle">
         <button
           className="btn debtForm-toggle-btn"
           onClick={() => handleDebtFormOpen()}
@@ -82,13 +83,15 @@ const App = () => {
             ? t("debtorsList.btn-back")
             : t("debtorsList.btn-add")}
         </button>
-      </div>
+      </header>
 
       {!isDebtFormOpen ? (
         <DebtList t={t} debtors={debtors} setDebtors={setDebtors} />
       ) : (
         <DebtForm t={t} addDebtor={addDebtor} onSubmit={handleDebtFormOpen} />
       )}
+
+      <Footer />
     </I18nextProvider>
   );
 };
