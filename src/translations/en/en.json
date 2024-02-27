@@ -1,4 +1,20 @@
 {
-  "greeting": "Hello!",
-  "content": "What's up my nigga."
+  "debtorsList": {
+    "title": "Debtors list",
+    "btn-add": "Add debtor",
+    "btn-back": "Go back to list"
+  },
+
+  "debtForm": {
+    "title": "Adding debtor",
+    "name": "Name",
+    "amount": "Amount",
+    "description": "Description",
+    "add": "Add debtor"
+  },
+
+  "debtor": {
+    "amount": "Amount",
+    "description": "Description"
+  }
 }

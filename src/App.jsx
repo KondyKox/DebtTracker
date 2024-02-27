@@ -3,6 +3,8 @@ import { I18nextProvider, useTranslation } from "react-i18next";
 import i18n from "./i18n";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
+import DebtList from "./components/Debtors/DebtList/DebtList";
+import DebtForm from "./components/Debtors/DebtForm/DebtForm";
 
 // Get your language
 const getLanguage = () => {
@@ -16,25 +18,51 @@ const getTheme = () => {
   return storedTheme;
 };
 
+// Get debtors
+const getDebtors = () => {
+  const storedDebtors = JSON.parse(localStorage.getItem("debtors")) || [];
+  return storedDebtors;
+};
+
 const App = () => {
   const { t } = useTranslation();
   const [activeLng, setActiveLng] = useState(getLanguage());
   const [isDarkTheme, setDarkTheme] = useState(getTheme());
+  const [isDebtFormOpen, setDebtFormOpen] = useState(false);
+  const [debtors, setDebtors] = useState(getDebtors());
 
+  // Toggle language
   useEffect(() => {
     const language = getLanguage();
     i18n.changeLanguage(language);
     setActiveLng(language);
   }, []);
 
+  // Toggle theme
   useEffect(() => {
     document.body.classList.toggle("light-mode", isDarkTheme);
   }, [isDarkTheme]);
+
+  // Set debtors in local storage
+  useEffect(() => {
+    localStorage.setItem("debtors", JSON.stringify(debtors));
+  }, [debtors]);
 
   // Change current theme
   const changeTheme = () => {
     setDarkTheme(!isDarkTheme);
     localStorage.setItem("isDarkTheme", isDarkTheme);
+  };
+
+  // Open / Close debt form
+  const handleDebtFormOpen = () => {
+    setDebtFormOpen(!isDebtFormOpen);
+  };
+
+  //   Add debtor
+  const addDebtor = (name, amount, description) => {
+    const newDebtor = { name, amount, description };
+    setDebtors([...debtors, newDebtor]);
   };
 
   return (
@@ -45,10 +73,22 @@ const App = () => {
         isDarkTheme={isDarkTheme}
         setDarkTheme={changeTheme}
       />
-      <div>
-        <h1>{t("greeting")}</h1>
-        <p>{t("content")}</p>
+      <div className="debtForm-toggle">
+        <button
+          className="btn debtForm-toggle-btn"
+          onClick={() => handleDebtFormOpen()}
+        >
+          {isDebtFormOpen
+            ? t("debtorsList.btn-back")
+            : t("debtorsList.btn-add")}
+        </button>
       </div>
+
+      {!isDebtFormOpen ? (
+        <DebtList t={t} debtors={debtors} setDebtors={setDebtors} />
+      ) : (
+        <DebtForm t={t} addDebtor={addDebtor} onSubmit={handleDebtFormOpen} />
+      )}
     </I18nextProvider>
   );
 };

@@ -6,10 +6,29 @@
   background: none;
   color: var(--clr-light);
   font-size: var(--font-md);
+  text-transform: uppercase;
   transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
   cursor: pointer;
   background: var(--clr-red);
+}
+
+.debtForm-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.debtForm-toggle-btn {
+  width: clamp(7em, 10em, 13em);
+  padding: 1em;
+  border: none;
+  border: 3px solid var(--clr-red);
+  border-radius: 10px;
+}
+
+.debtForm-toggle-btn:hover {
+  filter: drop-shadow(0 0 1em var(--clr-red));
 }

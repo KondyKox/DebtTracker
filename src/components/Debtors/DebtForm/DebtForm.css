@@ -1,0 +1,79 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: clamp(15em, 20em, 55em);
+  padding: 1em;
+  margin: auto;
+}
+
+form h2 {
+  padding: 0.5em;
+}
+
+textarea {
+  width: clamp(15em, 23em, 25em);
+  height: clamp(5em, 10em, 25em);
+}
+
+input {
+  width: clamp(15em, 23em, 25em);
+}
+
+.debtInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.debtInput {
+  background: none;
+  border: 3px solid var(--clr-blue);
+  border-radius: 10px;
+  padding: 0.5em;
+  margin: 0.5em;
+  color: var(--clr-light);
+}
+
+.debt-btn {
+  width: clamp(7em, 10em, 13em);
+  border: 3px solid var(--clr-blue);
+  border-radius: 10px;
+  font-size: var(--font-md);
+  font-weight: 700;
+  margin-top: 1em;
+}
+
+.debt-btn:hover {
+  background: var(--clr-blue);
+  color: var(--clr-red);
+}
+
+/* md */
+@media (min-width: 768px) {
+  textarea {
+    width: clamp(51em, 51em, 100em);
+    height: clamp(10em, 15em, 25em);
+  }
+
+  input {
+    width: clamp(25em, 25em, 100em);
+  }
+
+  .debtInputs {
+    flex-direction: row;
+  }
+
+  .debtInput {
+    padding: 1em;
+  }
+
+  .debt-btn {
+    width: clamp(15em, 20em, 30em);
+    font-size: var(--font-md);
+  }
+}
