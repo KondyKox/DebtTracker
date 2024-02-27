@@ -1,3 +1,14 @@
+.no-debtors {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.no-debtors .debtorsTitle {
+  font-size: var(--font-2xl);
+}
+
 .debtorsTitle {
   font-size: var(--font-xl);
   text-align: center;

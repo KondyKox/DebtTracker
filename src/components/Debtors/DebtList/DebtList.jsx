@@ -10,17 +10,25 @@ const DebtList = ({ t, debtors, setDebtors }) => {
 
   return (
     <div>
-      <h2 className="debtorsTitle">{t("debtorsList.title")}</h2>
-      {debtors.map((debtor, index) => (
-        <Debtor
-          key={index}
-          t={t}
-          name={debtor.name}
-          amount={debtor.amount}
-          description={debtor.description}
-          onDelete={() => handleDelete(index)}
-        />
-      ))}
+      {debtors.length === 0 ? (
+        <div className="no-debtors">
+          <h2 className="debtorsTitle">{t("debtorsList.no-debtors")}</h2>
+        </div>
+      ) : (
+        <div className="debtors">
+          <h2 className="debtorsTitle">{t("debtorsList.title")}</h2>
+          {debtors.map((debtor, index) => (
+            <Debtor
+              key={index}
+              t={t}
+              name={debtor.name}
+              amount={debtor.amount}
+              description={debtor.description}
+              onDelete={() => handleDelete(index)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
