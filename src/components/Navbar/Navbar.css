@@ -6,6 +6,7 @@
   align-items: center;
   margin-bottom: 1em;
   border-bottom: 1px solid var(--clr-blue);
+  box-shadow: 0 0.5em 1em var(--clr-blue);
   z-index: 3;
 }
 

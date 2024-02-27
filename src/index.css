@@ -44,6 +44,7 @@ html {
 .light-mode {
   --clr-dark: #cadcfc;
   --clr-light: #072d79;
+  --clr-blue: #3b5998;
 }
 
 body {

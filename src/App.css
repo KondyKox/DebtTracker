@@ -19,6 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2em;
 }
 
 .debtForm-toggle-btn {
@@ -27,6 +28,7 @@
   border: none;
   border: 3px solid var(--clr-red);
   border-radius: 10px;
+  filter: drop-shadow(0.5em 0.5em 1em var(--clr-red));
 }
 
 .debtForm-toggle-btn:hover {

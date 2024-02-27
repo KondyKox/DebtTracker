@@ -9,11 +9,12 @@ const Debtor = ({ t, name, amount, description, onDelete }) => {
           {t("debtor.amount")}: <span>{amount} zł</span>
         </p>
         <p className="debtor__description">
-          {t("debtor.description")}: <br /><span>{description}</span>
+          {t("debtor.description")}: <br />
+          <span>{description}</span>
         </p>
       </div>
       <button className="debtor-btn" onClick={onDelete}>
-        🗑️
+        <img src="./delete.png" alt="Delete debtor" />
       </button>
     </div>
   );

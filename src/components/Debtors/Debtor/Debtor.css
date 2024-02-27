@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   background: var(--clr-blue);
+  filter: drop-shadow(0 0 1em var(--clr-blue));
   border-radius: 10px;
   width: clamp(15em, 20em, 55em);
   margin: 1em auto;
@@ -13,8 +14,6 @@
 .debtor__title {
   padding: 0 1em;
   margin: 0.5em 0;
-  text-shadow: 1px 1px 1px var(--clr-red), -1px 1px 1px var(--clr-red),
-    -1px -1px 0 var(--clr-red), 1px -1px 0 var(--clr-red);
 }
 
 .debtor__info {
@@ -25,8 +24,6 @@
 
 .debtor__description {
   color: var(--clr-light);
-  text-shadow: 1px 1px 1px var(--clr-red), -1px 1px 1px var(--clr-red),
-    -1px -1px 0 var(--clr-red), 1px -1px 0 var(--clr-red);
   padding: 0 1em;
   margin: auto;
 }
@@ -45,13 +42,17 @@
   border-top: 3px solid var(--clr-red);
   background: none;
   font-size: var(--font-md);
+}
+
+.debtor-btn img {
+  max-width: 3em;
+  filter: grayscale(100%);
   transition: all 0.3s ease-in-out;
 }
 
-.debtor-btn:hover {
+.debtor-btn img:hover {
   cursor: pointer;
-  filter: drop-shadow(0 0 1em var(--clr-red));
-  transform: scale(1.5);
+  filter: grayscale(0) drop-shadow(0 0 0.5em var(--clr-red));
 }
 
 /* md */
