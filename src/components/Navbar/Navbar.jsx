@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import i18n from "../../i18n";
 import "./Navbar.css";
 
-const Navbar = ({ activeLng, setActiveLng, isDarkTheme, setDarkTheme }) => {
+const Navbar = ({ activeLng, setActiveLng, isLightTheme, setLightTheme }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -34,8 +34,8 @@ const Navbar = ({ activeLng, setActiveLng, isDarkTheme, setDarkTheme }) => {
       {windowWidth >= 768 ? (
         <div className="nav__elements">
           <button
-            className={`theme-toggle-btn btn ${!isDarkTheme ? "active" : null}`}
-            onClick={setDarkTheme}
+            className={`theme-toggle-btn btn ${!isLightTheme ? "active" : null}`}
+            onClick={setLightTheme}
           >
             💡
           </button>
@@ -87,8 +87,8 @@ const Navbar = ({ activeLng, setActiveLng, isDarkTheme, setDarkTheme }) => {
           </ul>
 
           <button
-            className={`theme-toggle-btn btn ${!isDarkTheme ? "active" : null}`}
-            onClick={setDarkTheme}
+            className={`theme-toggle-btn btn ${!isLightTheme ? "active" : null}`}
+            onClick={setLightTheme}
           >
             💡
           </button>

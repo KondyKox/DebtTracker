@@ -29,7 +29,7 @@ const getDebtors = () => {
 const App = () => {
   const { t } = useTranslation();
   const [activeLng, setActiveLng] = useState(getLanguage());
-  const [isLightTheme, setDarkTheme] = useState(getTheme());
+  const [isLightTheme, setLightTheme] = useState(getTheme());
   const [isDebtFormOpen, setDebtFormOpen] = useState(false);
   const [debtors, setDebtors] = useState(getDebtors());
 
@@ -52,7 +52,7 @@ const App = () => {
 
   // Change current theme
   const changeTheme = () => {
-    setDarkTheme(!isLightTheme);
+    setLightTheme(!isLightTheme);
     localStorage.setItem("isLightTheme", isLightTheme);
   };
 
@@ -73,7 +73,7 @@ const App = () => {
         activeLng={activeLng}
         setActiveLng={setActiveLng}
         isLightTheme={isLightTheme}
-        setDarkTheme={changeTheme}
+        setLightTheme={changeTheme}
       />
       <header className="debtForm-toggle">
         <button
