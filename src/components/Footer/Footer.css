@@ -24,6 +24,9 @@ footer {
   transition: all 0.3s ease-in-out;
 }
 
-.creator a:hover {
-  color: var(--clr-red);
+/* md */
+@media (min-width: 768px) {
+  .creator a:hover {
+    color: var(--clr-red);
+  }
 }

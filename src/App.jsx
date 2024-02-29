@@ -25,6 +25,7 @@ const getDebtors = () => {
   return storedDebtors;
 };
 
+// Application
 const App = () => {
   const { t } = useTranslation();
   const [activeLng, setActiveLng] = useState(getLanguage());

@@ -48,11 +48,6 @@ input {
   margin-top: 1em;
 }
 
-.debt-btn:hover {
-  background: var(--clr-blue);
-  color: var(--clr-red);
-}
-
 /* md */
 @media (min-width: 768px) {
   textarea {
@@ -75,5 +70,10 @@ input {
   .debt-btn {
     width: clamp(15em, 20em, 30em);
     font-size: var(--font-md);
+  }
+
+  .debt-btn:hover {
+    background: var(--clr-blue);
+    color: var(--clr-red);
   }
 }

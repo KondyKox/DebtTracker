@@ -47,12 +47,8 @@
 .debtor-btn img {
   max-width: 3em;
   filter: grayscale(100%);
-  transition: all 0.3s ease-in-out;
-}
-
-.debtor-btn img:hover {
   cursor: pointer;
-  filter: grayscale(0) drop-shadow(0 0 0.5em var(--clr-red));
+  transition: all 0.3s ease-in-out;
 }
 
 /* md */
@@ -71,5 +67,9 @@
 
   .debtor-btn {
     font-size: var(--font-lg);
+  }
+
+  .debtor-btn img:hover {
+    filter: grayscale(0) drop-shadow(0 0 0.5em var(--clr-red));
   }
 }
