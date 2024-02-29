@@ -8,6 +8,16 @@ const DebtList = ({ t, debtors, setDebtors }) => {
     setDebtors(updatedDebtors);
   };
 
+  // Edit debtor
+  const handleEdit = (index, editedDebtor) => {
+    const updatedDebtors = debtors.map((debtor, idx) => {
+      if (idx === index) return editedDebtor;
+
+      return debtor;
+    });
+    setDebtors(updatedDebtors);
+  };
+
   return (
     <div>
       {debtors.length === 0 ? (
@@ -21,10 +31,9 @@ const DebtList = ({ t, debtors, setDebtors }) => {
             <Debtor
               key={index}
               t={t}
-              name={debtor.name}
-              amount={debtor.amount}
-              description={debtor.description}
+              debtor={debtor}
               onDelete={() => handleDelete(index)}
+              onEdit={(updatedDebtor) => handleEdit(index, updatedDebtor)}
             />
           ))}
         </div>

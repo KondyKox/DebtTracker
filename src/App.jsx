@@ -15,7 +15,7 @@ const getLanguage = () => {
 
 // Get current theme
 const getTheme = () => {
-  const storedTheme = localStorage.getItem("isDarkTheme") || true;
+  const storedTheme = localStorage.getItem("isLightTheme") || false;
   return storedTheme;
 };
 
@@ -29,7 +29,7 @@ const getDebtors = () => {
 const App = () => {
   const { t } = useTranslation();
   const [activeLng, setActiveLng] = useState(getLanguage());
-  const [isDarkTheme, setDarkTheme] = useState(getTheme());
+  const [isLightTheme, setDarkTheme] = useState(getTheme());
   const [isDebtFormOpen, setDebtFormOpen] = useState(false);
   const [debtors, setDebtors] = useState(getDebtors());
 
@@ -42,8 +42,8 @@ const App = () => {
 
   // Toggle theme
   useEffect(() => {
-    document.body.classList.toggle("light-mode", isDarkTheme);
-  }, [isDarkTheme]);
+    document.body.classList.toggle("light-mode", !isLightTheme);
+  }, [isLightTheme]);
 
   // Set debtors in local storage
   useEffect(() => {
@@ -52,8 +52,8 @@ const App = () => {
 
   // Change current theme
   const changeTheme = () => {
-    setDarkTheme(!isDarkTheme);
-    localStorage.setItem("isDarkTheme", isDarkTheme);
+    setDarkTheme(!isLightTheme);
+    localStorage.setItem("isLightTheme", isLightTheme);
   };
 
   // Open / Close debt form
@@ -72,7 +72,7 @@ const App = () => {
       <Navbar
         activeLng={activeLng}
         setActiveLng={setActiveLng}
-        isDarkTheme={isDarkTheme}
+        isLightTheme={isLightTheme}
         setDarkTheme={changeTheme}
       />
       <header className="debtForm-toggle">

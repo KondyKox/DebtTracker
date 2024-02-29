@@ -51,10 +51,24 @@ body {
   font-family: "Roboto", sans-serif;
   background: var(--clr-dark);
   color: var(--clr-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 ul {
   list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea {
+  background: none;
+  border: none;
+  color: var(--clr-light);
 }
 
 /* Scrollbar */

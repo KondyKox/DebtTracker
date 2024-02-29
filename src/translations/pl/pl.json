@@ -16,6 +16,10 @@
 
   "debtor": {
     "amount": "Kwota",
-    "description": "Opis"
+    "description": "Opis",
+    "delete": "Usuń dłużnika",
+    "edit": "Edytuj dłużnika",
+    "save": "Zapisz zmiany",
+    "cancel": "Anuluj zmiany"
   }
 }

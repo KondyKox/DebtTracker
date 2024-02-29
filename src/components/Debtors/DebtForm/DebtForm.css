@@ -5,16 +5,18 @@ form {
   align-items: center;
   border-radius: 10px;
   width: clamp(15em, 20em, 55em);
+  min-height: 70vh;
   padding: 1em;
   margin: auto;
 }
 
 form h2 {
   padding: 0.5em;
+  text-align: center;
 }
 
 textarea {
-  width: clamp(15em, 23em, 25em);
+  width: clamp(15em, 18em, 20em);
   height: clamp(5em, 10em, 25em);
 }
 
@@ -31,12 +33,10 @@ input {
 }
 
 .debtInput {
-  background: none;
   border: 3px solid var(--clr-blue);
   border-radius: 10px;
   padding: 0.5em;
   margin: 0.5em;
-  color: var(--clr-light);
 }
 
 .debt-btn {
@@ -50,13 +50,21 @@ input {
 
 /* md */
 @media (min-width: 768px) {
-  textarea {
-    width: clamp(51em, 51em, 100em);
-    height: clamp(10em, 15em, 25em);
+  form {
+    width: clamp(35em, 45em, 75em);
   }
 
-  input {
-    width: clamp(25em, 25em, 100em);
+  form h2 {
+    font-size: var(--font-2xl);
+  }
+
+  form input {
+    width: clamp(15em, 20em, 50em);
+  }
+
+  form textarea {
+    width: clamp(30em, 40em, 100em);
+    height: clamp(10em, 15em, 25em);
   }
 
   .debtInputs {

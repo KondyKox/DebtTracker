@@ -16,6 +16,10 @@
 
   "debtor": {
     "amount": "Amount",
-    "description": "Description"
+    "description": "Description",
+    "delete": "Delete debtor",
+    "edit": "Edit debtor",
+    "save": "Save changes",
+    "cancel": "Cancel changes"
   }
 }

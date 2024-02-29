@@ -28,18 +28,23 @@
   margin: auto;
 }
 
-.debtor__description span {
+.debtor__description span,
+input {
   color: var(--clr-red);
-  text-wrap: wrap;
   max-width: 30ch;
-  text-shadow: none;
+  padding: 0 1em;
+  margin: 0.5em 0;
+}
+
+.debtor-btn-container {
+  border-top: 3px solid var(--clr-red);
+  margin-top: 1em;
 }
 
 .debtor-btn {
   padding: 0.5em;
-  margin: 1em;
+  margin: 0.5em 0.25em;
   border: none;
-  border-top: 3px solid var(--clr-red);
   background: none;
   font-size: var(--font-md);
 }
@@ -51,9 +56,63 @@
   transition: all 0.3s ease-in-out;
 }
 
+.debtor__edit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.debtor__edit .debtor__title,
+.debtor__description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  width: clamp(10em, 15em, 55em);
+}
+
+.debtor__title input {
+  max-width: 80%;
+  text-align: center;
+  padding: 0 1em;
+  margin: 0.5em 0;
+  font-size: var(--font-md);
+}
+
+.debtor__description:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.debtor__description input,
+textarea {
+  text-align: center;
+  padding: 0 0.5em;
+  margin: 0.5em;
+  font-size: var(--font-md);
+  color: var(--clr-red);
+}
+
+.debtor__description input {
+  max-width: 25%;
+}
+
+.debtor__description textarea {
+  max-width: 100%;
+  max-height: 10em;
+  color: var(--clr-red);
+}
+
 /* md */
 @media (min-width: 768px) {
   .debtor {
+    width: clamp(35em, 45em, 55em);
+  }
+
+  .debtor__edit {
     width: clamp(35em, 45em, 55em);
   }
 
