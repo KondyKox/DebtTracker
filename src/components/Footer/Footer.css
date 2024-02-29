@@ -1,12 +1,10 @@
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 1;
+  flex-shrink: 0;
   border-top: 1px solid var(--clr-blue);
   box-shadow: 0 0em 1em var(--clr-blue);
-  width: 100%;
-  margin: 0.25em 0;
+  margin-top: auto;
+  padding: 0.25em;
 }
 
 .creator {
@@ -19,7 +17,6 @@ footer {
 
 .creator a {
   color: var(--clr-light);
-  text-decoration: none;
   font-size: var(--font-md);
   transition: all 0.3s ease-in-out;
 }
