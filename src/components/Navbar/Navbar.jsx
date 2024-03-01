@@ -29,7 +29,7 @@ const Navbar = ({ activeLng, setActiveLng, isLightTheme, setLightTheme }) => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src="./logo.jpg" alt="Logo" />
+        <img src="./logo.png" alt="Logo" />
       </div>
       {windowWidth >= 768 ? (
         <div className="nav__elements">
