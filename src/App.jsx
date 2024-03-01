@@ -5,7 +5,6 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import DebtList from "./components/Debtors/DebtList/DebtList";
 import DebtForm from "./components/Debtors/DebtForm/DebtForm";
-import Footer from "./components/Footer/Footer";
 
 // Get your language
 const getLanguage = () => {
@@ -132,8 +131,6 @@ const App = () => {
       ) : (
         <DebtForm t={t} addDebtor={addDebtor} onSubmit={handleDebtFormOpen} />
       )}
-
-      <Footer />
     </I18nextProvider>
   );
 };

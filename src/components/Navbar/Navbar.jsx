@@ -29,12 +29,16 @@ const Navbar = ({ activeLng, setActiveLng, isLightTheme, setLightTheme }) => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src="./logo.png" alt="Logo" />
+        <a href="https://github.com/KondyKox" target="_blank">
+          <img src="./logo.png" alt="Logo" />
+        </a>
       </div>
       {windowWidth >= 768 ? (
         <div className="nav__elements">
           <button
-            className={`theme-toggle-btn btn ${!isLightTheme ? "active" : null}`}
+            className={`theme-toggle-btn btn ${
+              !isLightTheme ? "active" : null
+            }`}
             onClick={setLightTheme}
           >
             💡
@@ -87,7 +91,9 @@ const Navbar = ({ activeLng, setActiveLng, isLightTheme, setLightTheme }) => {
           </ul>
 
           <button
-            className={`theme-toggle-btn btn ${!isLightTheme ? "active" : null}`}
+            className={`theme-toggle-btn btn ${
+              !isLightTheme ? "active" : null
+            }`}
             onClick={setLightTheme}
           >
             💡
