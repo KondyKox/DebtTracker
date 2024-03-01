@@ -3,7 +3,8 @@
     "no-debtors": "No debtors",
     "title": "Debtors list",
     "btn-add": "Add debtor",
-    "btn-back": "Go back to list"
+    "btn-back": "Go back to list",
+    "search": "Search for a debtor"
   },
 
   "debtForm": {

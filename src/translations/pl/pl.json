@@ -3,7 +3,8 @@
     "no-debtors": "Brak dłużników",
     "title": "Lista dłużników",
     "btn-add": "Dodaj dłużnika",
-    "btn-back": "Wróć do listy"
+    "btn-back": "Wróć do listy",
+    "search": "Wyszukaj dłużnika"
   },
 
   "debtForm": {

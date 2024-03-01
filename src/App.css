@@ -1,3 +1,28 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+
+header .btn {
+  width: clamp(7em, 10em, 13em);
+  padding: 1em;
+  border: none;
+  border: 3px solid var(--clr-red);
+  border-radius: 10px;
+  filter: drop-shadow(0.5em 0.5em 1em var(--clr-red));
+}
+
+header input {
+  border: 3px solid var(--clr-blue);
+  border-radius: 10px;
+  text-align: center;
+  padding: 0.5em;
+  margin-top: 1em;
+}
+
 .btn {
   width: 3.5em;
   padding: 1em;
@@ -9,22 +34,6 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-}
-
-.debtForm-toggle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2em;
-}
-
-.debtForm-toggle-btn {
-  width: clamp(7em, 10em, 13em);
-  padding: 1em;
-  border: none;
-  border: 3px solid var(--clr-red);
-  border-radius: 10px;
-  filter: drop-shadow(0.5em 0.5em 1em var(--clr-red));
 }
 
 /* md */

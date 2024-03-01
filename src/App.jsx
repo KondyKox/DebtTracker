@@ -32,6 +32,8 @@ const App = () => {
   const [isLightTheme, setLightTheme] = useState(getTheme());
   const [isDebtFormOpen, setDebtFormOpen] = useState(false);
   const [debtors, setDebtors] = useState(getDebtors());
+  const [filteredDebtors, setFilteredDebtors] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   // Toggle language
   useEffect(() => {
@@ -61,6 +63,26 @@ const App = () => {
     setDebtFormOpen(!isDebtFormOpen);
   };
 
+  // Find debtor
+  const findDebtor = (searchName) => {
+    const filteredDebtors = debtors.filter((debtor) =>
+      debtor.name.toLowerCase().includes(searchName.toLowerCase())
+    );
+    return filteredDebtors;
+  };
+
+  // Handle for searching debtors
+  const handleSearchDebtors = (event) => {
+    const searchName = event.target.value;
+    setSearchValue(searchName);
+
+    if (searchName === "") setFilteredDebtors([]);
+    else {
+      const foundDebtors = findDebtor(searchName);
+      setFilteredDebtors(foundDebtors);
+    }
+  };
+
   //   Add debtor
   const addDebtor = (name, amount, contacts, description) => {
     const newDebtor = {
@@ -80,19 +102,33 @@ const App = () => {
         isLightTheme={isLightTheme}
         setLightTheme={changeTheme}
       />
-      <header className="debtForm-toggle">
-        <button
-          className="btn debtForm-toggle-btn"
-          onClick={() => handleDebtFormOpen()}
-        >
+      <header>
+        <button className="btn" onClick={() => handleDebtFormOpen()}>
           {isDebtFormOpen
             ? t("debtorsList.btn-back")
             : t("debtorsList.btn-add")}
         </button>
+        {!isDebtFormOpen ? (
+          <input
+            type="text"
+            placeholder={t("debtorsList.search")}
+            onChange={handleSearchDebtors}
+          />
+        ) : null}
       </header>
 
       {!isDebtFormOpen ? (
-        <DebtList t={t} debtors={debtors} setDebtors={setDebtors} />
+        <DebtList
+          t={t}
+          debtors={
+            searchValue.length > 0
+              ? filteredDebtors.length > 0
+                ? filteredDebtors
+                : []
+              : debtors
+          }
+          setDebtors={setDebtors}
+        />
       ) : (
         <DebtForm t={t} addDebtor={addDebtor} onSubmit={handleDebtFormOpen} />
       )}
