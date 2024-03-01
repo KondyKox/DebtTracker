@@ -63,6 +63,7 @@ input {
   font-size: var(--font-md);
   font-weight: 700;
   margin-top: 1em;
+  box-shadow: 0 0 1em var(--clr-blue);
 }
 
 /* md */
