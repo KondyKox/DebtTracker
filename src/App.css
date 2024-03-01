@@ -21,6 +21,7 @@ header input {
   text-align: center;
   padding: 0.5em;
   margin-top: 1em;
+  box-shadow: 0 0 1em var(--clr-blue);
 }
 
 .btn {
