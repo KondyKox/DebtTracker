@@ -62,8 +62,13 @@ const App = () => {
   };
 
   //   Add debtor
-  const addDebtor = (name, amount, description) => {
-    const newDebtor = { name, amount, description };
+  const addDebtor = (name, amount, contacts, description) => {
+    const newDebtor = {
+      name,
+      amount,
+      contacts,
+      description,
+    };
     setDebtors([...debtors, newDebtor]);
   };
 

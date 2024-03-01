@@ -10,6 +10,7 @@
     "title": "Dodawanie dłużnika",
     "name": "Nazwa",
     "amount": "Kwota",
+    "contact": "Kontakt",
     "description": "Opis",
     "add": "Dodaj dłużnika"
   },

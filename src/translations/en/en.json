@@ -10,6 +10,7 @@
     "title": "Adding debtor",
     "name": "Name",
     "amount": "Amount",
+    "contact": "Contact",
     "description": "Description",
     "add": "Add debtor"
   },

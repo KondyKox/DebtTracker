@@ -24,12 +24,36 @@ input {
   width: clamp(15em, 23em, 25em);
 }
 
+#contact {
+  background: var(--clr-blue);
+  color: var(--clr-light);
+  border: 3px solid var(--clr-blue);
+  font-size: var(--font-sm);
+  padding: 0.5em;
+  width: 95%;
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin: 0.5em;
+}
+
+#contact option {
+  padding: 1em;
+  text-transform: uppercase;
+}
+
 .debtInputs {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1em;
+}
+
+.debtContact {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .debtInput {

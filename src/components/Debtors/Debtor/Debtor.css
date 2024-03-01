@@ -22,6 +22,10 @@
   gap: 1em;
 }
 
+.debtor__info .debtor__description:nth-child(2) {
+  flex-direction: column;
+}
+
 .debtor__description {
   color: var(--clr-light);
   padding: 0 1em;
@@ -34,6 +38,19 @@ input {
   max-width: 30ch;
   padding: 0 1em;
   margin: 0.5em 0;
+}
+
+.debtor__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.debtor__contact-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .debtor-btn-container {
