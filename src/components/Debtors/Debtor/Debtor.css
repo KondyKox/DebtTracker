@@ -49,8 +49,13 @@ input {
 
 .debtor__contact-option {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 0.25em;
+}
+
+.debtor__contact-option img {
+  max-width: 1.5em;
 }
 
 .debtor-btn-container {
@@ -121,6 +126,17 @@ textarea {
   max-width: 100%;
   max-height: 10em;
   color: var(--clr-red);
+}
+
+.debtor__edit-contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.debtor__edit-contacts li {
+  max-width: 15em;
+  justify-content: center;
 }
 
 /* md */

@@ -5,7 +5,6 @@ form {
   align-items: center;
   border-radius: 10px;
   width: clamp(15em, 20em, 55em);
-  min-height: 70vh;
   padding: 1em;
   margin: auto;
 }
@@ -24,36 +23,30 @@ input {
   width: clamp(15em, 23em, 25em);
 }
 
-#contact {
-  background: var(--clr-blue);
-  color: var(--clr-light);
-  border: 3px solid var(--clr-blue);
-  font-size: var(--font-sm);
-  padding: 0.5em;
-  width: 95%;
-  border-radius: 10px;
-  text-transform: uppercase;
-  margin: 0.5em;
-}
-
-#contact option {
-  padding: 1em;
-  text-transform: uppercase;
-}
-
 .debtInputs {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 1em 0;
 }
 
-.debtContact {
-  margin: 1em 0;
+.debtContacts {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1em;
+  border: 3px solid var(--clr-blue);
+  border-radius: 10px;
+  padding: 0.25em;
+}
+
+.debtContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25em;
 }
 
 .debtInput {

@@ -10,22 +10,6 @@ const Debtor = ({ t, debtor, onDelete, onEdit }) => {
     debtor.description
   );
 
-  // Contact img
-  const getContactImage = (contact) => {
-    switch (contact) {
-      case "messenger":
-        return "./icons/messenger.png";
-      case "email":
-        return "./icons/email.png";
-      case "phone":
-        return "./icons/phone.png";
-      case "other":
-        return "./icons/other.png";
-      default:
-        break;
-    }
-  };
-
   // Handle contact change
   const handleContactChange = (index, value) => {
     const updatedContacts = [...editedContacts];
@@ -38,6 +22,7 @@ const Debtor = ({ t, debtor, onDelete, onEdit }) => {
     const editedDebtor = {
       name: editedName,
       amount: editedAmount,
+      contacts: editedContacts,
       description: editedDescription,
     };
 
@@ -49,6 +34,7 @@ const Debtor = ({ t, debtor, onDelete, onEdit }) => {
   const handleCancelEdit = () => {
     setEditedName(debtor.name);
     setEditedAmount(debtor.amount);
+    setEditedContacts(debtor.contacts);
     setEditedDescription(debtor.description);
     setEditing(false);
   };
@@ -73,26 +59,33 @@ const Debtor = ({ t, debtor, onDelete, onEdit }) => {
             />
             zł
           </div>
-          {/* <div className="debtor__description debtor__contact">
-            {t("debtForm.contact")}: <br />
-            {debtor.contacts &&
-              debtor.contacts.map((contact, index) => (
-                <div key={index}>
-                  <span>{contact.option}: </span>
-                  <input
-                    type="text"
-                    value={editedContacts[index].value}
-                    onChange={(e) => handleContactChange(index, e.target.value)}
-                  />
-                </div>
-              ))}
-          </div> */}
           <div className="debtor__description">
             {t("debtor.description")}: <br />
             <textarea
               value={editedDescription}
               onChange={(e) => setEditedDescription(e.target.value)}
             ></textarea>
+          </div>
+          <div className="debtor__description debtor__contact">
+            {t("contact.contact")}:
+            <ul className="debtor__edit-contacts">
+              {editedContacts &&
+                editedContacts.map((contact, index) => (
+                  <li key={index} className="debtor__contact-option">
+                    <img
+                      src={`./icons/${contact.option}.png`}
+                      alt={contact.option}
+                    />
+                    <input
+                      type="text"
+                      value={editedContacts[index].value}
+                      onChange={(e) =>
+                        handleContactChange(index, e.target.value)
+                      }
+                    />
+                  </li>
+                ))}
+            </ul>
           </div>
 
           <div className="debtor-btn-container">
@@ -117,13 +110,14 @@ const Debtor = ({ t, debtor, onDelete, onEdit }) => {
             </div>
           </div>
           <div className="debtor__description debtor__contact">
+            {t("contact.contact")}: <br />
             <ul>
               {debtor.contacts &&
                 debtor.contacts.map((contact, index) => (
                   <li key={index} className="debtor__contact-option">
                     <img
-                      src={getContactImage(contact.option)}
-                      alt={contact.value}
+                      src={`./icons/${contact.option}.png`}
+                      alt={contact.option}
                     />
                     <span>{contact.value}</span>
                   </li>

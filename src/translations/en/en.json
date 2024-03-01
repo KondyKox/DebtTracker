@@ -10,7 +10,6 @@
     "title": "Adding debtor",
     "name": "Name",
     "amount": "Amount",
-    "contact": "Contact",
     "description": "Description",
     "add": "Add debtor"
   },
@@ -22,5 +21,11 @@
     "edit": "Edit debtor",
     "save": "Save changes",
     "cancel": "Cancel changes"
+  },
+
+  "contact": {
+    "contact": "Contact",
+    "phone": "Phone number",
+    "other": "Other contact"
   }
 }

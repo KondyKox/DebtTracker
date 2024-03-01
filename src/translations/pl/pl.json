@@ -10,7 +10,6 @@
     "title": "Dodawanie dłużnika",
     "name": "Nazwa",
     "amount": "Kwota",
-    "contact": "Kontakt",
     "description": "Opis",
     "add": "Dodaj dłużnika"
   },
@@ -22,5 +21,11 @@
     "edit": "Edytuj dłużnika",
     "save": "Zapisz zmiany",
     "cancel": "Anuluj zmiany"
+  },
+
+  "contact": {
+    "contact": "Kontakt",
+    "phone": "Numer telefonu",
+    "other": "Inny kontakt"
   }
 }
