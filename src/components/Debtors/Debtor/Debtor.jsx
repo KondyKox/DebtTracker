@@ -59,13 +59,6 @@ const Debtor = ({ t, debtor, onDelete, onEdit }) => {
             />
             zł
           </div>
-          <div className="debtor__description">
-            {t("debtor.description")}: <br />
-            <textarea
-              value={editedDescription}
-              onChange={(e) => setEditedDescription(e.target.value)}
-            ></textarea>
-          </div>
           <div className="debtor__description debtor__contact">
             {t("contact.contact")}:
             <ul className="debtor__edit-contacts">
@@ -87,6 +80,13 @@ const Debtor = ({ t, debtor, onDelete, onEdit }) => {
                 ))}
             </ul>
           </div>
+          <div className="debtor__description">
+            {t("debtor.description")}: <br />
+            <textarea
+              value={editedDescription}
+              onChange={(e) => setEditedDescription(e.target.value)}
+            ></textarea>
+          </div>
 
           <div className="debtor-btn-container">
             <button className="debtor-btn" onClick={handleSave}>
@@ -104,26 +104,27 @@ const Debtor = ({ t, debtor, onDelete, onEdit }) => {
             <div className="debtor__description">
               {t("debtor.amount")}: <span>{debtor.amount} zł</span>
             </div>
+            <div className="debtor__description debtor__contact">
+              {t("contact.contact")}: <br />
+              <ul>
+                {debtor.contacts &&
+                  debtor.contacts.map((contact, index) => (
+                    <li key={index} className="debtor__contact-option">
+                      <img
+                        src={`./icons/${contact.option}.png`}
+                        alt={contact.option}
+                      />
+                      <span>{contact.value}</span>
+                    </li>
+                  ))}
+              </ul>
+            </div>
             <div className="debtor__description">
               {t("debtor.description")}: <br />
               <span>{debtor.description}</span>
             </div>
           </div>
-          <div className="debtor__description debtor__contact">
-            {t("contact.contact")}: <br />
-            <ul>
-              {debtor.contacts &&
-                debtor.contacts.map((contact, index) => (
-                  <li key={index} className="debtor__contact-option">
-                    <img
-                      src={`./icons/${contact.option}.png`}
-                      alt={contact.option}
-                    />
-                    <span>{contact.value}</span>
-                  </li>
-                ))}
-            </ul>
-          </div>
+
           <div className="debtor-btn-container">
             <button className="debtor-btn" onClick={onDelete}>
               <img src="./btn/delete.png" alt={t("debtor.delete")} />
