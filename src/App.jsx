@@ -96,6 +96,7 @@ const App = () => {
   return (
     <I18nextProvider i18n={i18n}>
       <Navbar
+        t={t}
         activeLng={activeLng}
         setActiveLng={setActiveLng}
         isLightTheme={isLightTheme}

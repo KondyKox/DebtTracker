@@ -1,4 +1,9 @@
 {
+  "navbar": {
+    "login": "Log In",
+    "register": "Sign In"
+  },
+
   "debtorsList": {
     "no-debtors": "No debtors",
     "title": "Debtors list",

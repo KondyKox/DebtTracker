@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import i18n from "../../i18n";
 import "./Navbar.css";
 
-const Navbar = ({ activeLng, setActiveLng, isLightTheme, setLightTheme }) => {
+const Navbar = ({
+  t,
+  activeLng,
+  setActiveLng,
+  isLightTheme,
+  setLightTheme,
+}) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -35,6 +41,10 @@ const Navbar = ({ activeLng, setActiveLng, isLightTheme, setLightTheme }) => {
       </div>
       {windowWidth >= 768 ? (
         <div className="nav__elements">
+          <div className="nav__login">
+            <button className="btn login-btn">{t("navbar.login")}</button>
+            <button className="btn login-btn">{t("navbar.register")}</button>
+          </div>
           <button
             className={`theme-toggle-btn btn ${
               !isLightTheme ? "active" : null
@@ -71,6 +81,10 @@ const Navbar = ({ activeLng, setActiveLng, isLightTheme, setLightTheme }) => {
       {/* Mobile side menu */}
       {isMenuOpen && windowWidth < 768 && (
         <div className="mobile__nav">
+          <div className="nav__login">
+            <button className="btn login-btn">{t("navbar.login")}</button>
+            <button className="btn login-btn">{t("navbar.register")}</button>
+          </div>
           <ul className="mobile-languages languages_list">
             <li>
               <img

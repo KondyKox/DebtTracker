@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 10%;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -33,6 +33,30 @@
 .logo img {
   max-width: 7.5em;
   padding: 0.5em;
+}
+
+.nav__elements {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.nav__login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1em;
+}
+
+.login-btn {
+  border-radius: 10px;
+  padding: 0.75em;
+  font-size: var(--font-lg);
+}
+
+.login-btn:hover {
+  background: none;
+  color: var(--clr-red);
 }
 
 .languages_list {
@@ -52,6 +76,10 @@
 
 .languages_list img:not(.active) {
   filter: grayscale(100%);
+}
+
+.toggle-menu {
+  z-index: 1;
 }
 
 .theme-toggle-btn {
@@ -76,6 +104,15 @@
 
   .nav__elements {
     display: flex;
+  }
+
+  .nav__login {
+    margin: 0 auto;
+    flex-direction: row;
+  }
+
+  .login-btn {
+    font-size: var(--font-md);
   }
 
   .theme-toggle-btn {
