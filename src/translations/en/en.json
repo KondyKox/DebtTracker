@@ -1,7 +1,10 @@
 {
-  "navbar": {
+  "user": {
     "login": "Log In",
-    "register": "Sign In"
+    "register": "Sign In",
+    "username": "Username",
+    "password": "Password",
+    "repPass": "Repeat password"
   },
 
   "debtorsList": {

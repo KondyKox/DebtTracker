@@ -5,6 +5,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import DebtList from "./components/Debtors/DebtList/DebtList";
 import DebtForm from "./components/Debtors/DebtForm/DebtForm";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 // Get your language
 const getLanguage = () => {
@@ -30,6 +31,8 @@ const App = () => {
   const [activeLng, setActiveLng] = useState(getLanguage());
   const [isLightTheme, setLightTheme] = useState(getTheme());
   const [isDebtFormOpen, setDebtFormOpen] = useState(false);
+  const [isLoginFormOpen, setLoginFormOpen] = useState(false);
+  const [whichForm, setWhichForm] = useState(null);
   const [debtors, setDebtors] = useState(getDebtors());
   const [filteredDebtors, setFilteredDebtors] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -57,9 +60,21 @@ const App = () => {
     localStorage.setItem("isLightTheme", isLightTheme);
   };
 
+  // Handle debt form & login form
+  const handleFormsOpen = () => {
+    if (isLoginFormOpen) handleLoginFormOpen();
+    else handleDebtFormOpen();
+  };
+
   // Open / Close debt form
   const handleDebtFormOpen = () => {
     setDebtFormOpen(!isDebtFormOpen);
+  };
+
+  // Toggle login form
+  const handleLoginFormOpen = (whichForm) => {
+    setLoginFormOpen(!isLoginFormOpen);
+    setWhichForm(whichForm);
   };
 
   // Find debtor
@@ -101,10 +116,11 @@ const App = () => {
         setActiveLng={setActiveLng}
         isLightTheme={isLightTheme}
         setLightTheme={changeTheme}
+        onClick={handleLoginFormOpen}
       />
       <header>
-        <button className="btn" onClick={() => handleDebtFormOpen()}>
-          {isDebtFormOpen
+        <button className="btn" onClick={() => handleFormsOpen()}>
+          {isDebtFormOpen || isLoginFormOpen
             ? t("debtorsList.btn-back")
             : t("debtorsList.btn-add")}
         </button>
@@ -118,17 +134,21 @@ const App = () => {
       </header>
 
       {!isDebtFormOpen ? (
-        <DebtList
-          t={t}
-          debtors={
-            searchValue.length > 0
-              ? filteredDebtors.length > 0
-                ? filteredDebtors
-                : []
-              : debtors
-          }
-          setDebtors={setDebtors}
-        />
+        !isLoginFormOpen ? (
+          <DebtList
+            t={t}
+            debtors={
+              searchValue.length > 0
+                ? filteredDebtors.length > 0
+                  ? filteredDebtors
+                  : []
+                : debtors
+            }
+            setDebtors={setDebtors}
+          />
+        ) : (
+          <LoginForm t={t} form={whichForm} />
+        )
       ) : (
         <DebtForm t={t} addDebtor={addDebtor} onSubmit={handleDebtFormOpen} />
       )}

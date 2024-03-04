@@ -8,6 +8,7 @@ const Navbar = ({
   setActiveLng,
   isLightTheme,
   setLightTheme,
+  onClick,
 }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -42,8 +43,15 @@ const Navbar = ({
       {windowWidth >= 768 ? (
         <div className="nav__elements">
           <div className="nav__login">
-            <button className="btn login-btn">{t("navbar.login")}</button>
-            <button className="btn login-btn">{t("navbar.register")}</button>
+            <button className="btn login-btn" onClick={() => onClick("login")}>
+              {t("user.login")}
+            </button>
+            <button
+              className="btn login-btn"
+              onClick={() => onClick("register")}
+            >
+              {t("user.register")}
+            </button>
           </div>
           <button
             className={`theme-toggle-btn btn ${

@@ -1,7 +1,10 @@
 {
-  "navbar": {
+  "user": {
     "login": "Logowanie",
-    "register": "Rejestracja"
+    "register": "Rejestracja",
+    "username": "Nazwa użytkownika",
+    "password": "Hasło",
+    "repPass": "Powtórz hasło"
   },
 
   "debtorsList": {
